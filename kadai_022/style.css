@@ -1,0 +1,106 @@
+/* ===== Step3: 下準備 ===== */
+body, h1, p {
+    margin: 0;
+}
+
+p, a {
+    font-size: 20px;
+}
+
+/* ===== Step4: header ===== */
+header {
+    margin-bottom: 20px;
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+    padding: 20px 0; /* 指示通りの高さ */
+}
+
+header h1 {
+    color: rgb(255, 255, 255);
+}
+
+/* ===== Step5: main ===== */
+main {
+    padding: 10px;
+}
+
+#parent {
+    display: flex;
+    justify-content: space-between; /* 子要素の間隔を均等に */
+}
+
+.contents {
+    border: 3px solid rgb(238, 204, 204);
+    flex-basis: 25%;         /* 親要素の25% */
+    padding: 10px 15px;      /* 内側余白 */
+    margin: 20px 0;          /* 外側余白 */
+    text-align: center;
+}
+
+/* h2 */
+.contents h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122);
+}
+
+/* h2の●疑似要素 */
+.contents h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+}
+
+/* 二番目pの一文字目（傘）の装飾 */
+.contents p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+}
+
+/* 画像 */
+.contents img {
+    margin: 10px 0;
+    width: 70%;
+}
+
+/* ===== Step6: footer ===== */
+footer {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+    padding: 10px 0; /* 指示通りの高さ */
+}
+
+footer a {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-decoration: underline;
+    padding: 5px 0;
+}
+
+footer a:visited {
+    color: rgb(193, 234, 251);
+}
+
+footer a:hover {
+    color: rgb(245, 178, 168);
+}
+
+/* ===== Step7: レスポンシブ（768px以下） ===== */
+@media screen and (max-width: 768px) {
+
+    .contents h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    #parent {
+        flex-direction: column;
+    }
+
+    footer a {
+        font-size: 25px;   /* 文字サイズのみ変更 */
+        /* padding はそのまま → 帯の高さは横幅と同じ */
+    }
+}
